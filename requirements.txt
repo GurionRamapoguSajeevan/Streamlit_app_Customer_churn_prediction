@@ -1,0 +1,16 @@
+# Core Streamlit/Data Science Libraries
+streamlit
+pandas
+numpy
+joblib
+scikit-learn
+xgboost
+imbalanced-learn
+
+# Visualization
+matplotlib
+seaborn
+plotly
+
+# Explainability (if used/intended for SHAP plots)
+shap
