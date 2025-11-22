@@ -55,5 +55,10 @@ This repository is structured for seamless deployment on:
 
 # Please make sure the .pkl model file is tracked via _Git LFS_ due to its size.
 
-# 📬 Contact
+# Author: _Gurion_
+
+[_LinkedIN_](https://www.linkedin.com/in/rs-gurion/)
+
+[_Complete Churn Prediction ML & Analytics Project_](https://github.com/GurionRamapoguSajeevan/Customer-Churn-Predictive-Analytics-Suite)
+
 If you have questions, suggestions, or want to collaborate, feel free to reach out via GitHub @GurionRamapoguSajeevan.
