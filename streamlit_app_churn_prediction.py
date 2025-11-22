@@ -49,8 +49,31 @@ Explore performance metrics, curves, feature importance, and try predicting chur
 # --- Model Evaluation Metrics ---
 st.header("Ensemble Model Evaluation Metrics")
 report = classification_report(y_test, y_pred_ensemble, output_dict=True)
-report_df = pd.DataFrame(report).transpose()
-st.dataframe(report_df.style.format("{:.2f}"), use_container_width=True)
+
+# 1. Extract the overall summary metrics (accuracy, macro avg, weighted avg)
+accuracy = report.get('accuracy', 'N/A')
+macro_avg = report.get('macro avg', {})
+weighted_avg = report.get('weighted avg', {})
+
+st.subheader("Overall Summary Metrics")
+st.markdown(f"""
+* **Accuracy:** {accuracy:.4f}
+* **Macro Average F1-Score:** {macro_avg.get('f1-score', 'N/A'):.4f}
+* **Weighted Average F1-Score:** {weighted_avg.get('f1-score', 'N/A'):.4f}
+""")
+st.markdown("---")
+
+
+# 2. Extract and display the class-wise metrics (0 and 1) in a table
+# Note: Since accuracy is a single number and not a row in the dict,
+# we remove the overall keys before converting to a DataFrame for the table.
+metrics_df = pd.DataFrame(report).transpose()
+# Drop the rows that represent the overall summary metrics
+metrics_df = metrics_df.drop(labels=['accuracy', 'macro avg', 'weighted avg'], errors='ignore')
+
+# Use st.dataframe for the class-wise metrics table
+st.subheader("Class-wise Metrics (Churn: 1, No Churn: 0)")
+st.dataframe(metrics_df.style.format("{:.4f}"), use_container_width=True)
 
 # --- Confusion Matrix ---
 st.subheader("Confusion Matrix")
