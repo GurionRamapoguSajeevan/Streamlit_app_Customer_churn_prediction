@@ -2,8 +2,10 @@
 
 An interactive web application that predicts customer churn using a trained machine learning model. This app provides instant churn risk predictions and makes model insights easily accessible through a clean, user-friendly interface.
 
-# View the web app here: [_Streamlit App_](https://churnprediction-app-grs-wqyhm9zikea2uleappszlmc.streamlit.app/)
- 
+# View the web app here: 
+
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://churnprediction-app-grs-wqyhm9zikea2uleappszlmc.streamlit.app/)
+
 # Overview
 * This Streamlit application is built to demonstrate real-time churn prediction using a production-ready machine learning pipeline.
 * It loads a pre-trained model, processes user inputs, and generates clear predictions that help telecom business stakeholders assess customer churn risk.
